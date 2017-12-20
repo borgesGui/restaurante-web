@@ -1,0 +1,22 @@
+<div class="body">
+  <h1 class="subtitulo">{{ titulo | uppercase }}</h1>
+
+  <section class="detail width60">
+    <form #f="ngForm" (ngSubmit)="onSubmit(f)" class="navbar-form">
+      <fieldset class="scheduler-border">
+        <legend class="scheduler-border">Dados</legend>
+        <div class="form-group" [class.has-error]="isFieldInvalidAndTouched(nome)">
+          <label class="control-label">Nome do Restaurante:</label>
+          <br>
+          <input id="nome" name="nome" type="text" class="form-control" [(ngModel)]="restaurante.nome" required #nome="ngModel">
+        </div>
+        <br>
+        <br>
+        <a routerLink="/restaurantes">
+          <button type="button" class="btn btn-danger glyphicon glyphicon-remove"> Cancelar</button>
+        </a>
+        <button type="submit" class="btn btn-success glyphicon glyphicon-floppy-disk" [disabled]="!f.valid"> Salvar</button>
+      </fieldset>
+    </form>
+  </section>
+</div>

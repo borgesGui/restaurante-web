@@ -1,0 +1,38 @@
+<div class="body">
+  <h1 class="subtitulo">{{ titulo | uppercase }}</h1>
+
+  <section class="detail width60">
+    <a [routerLink]="['cadastrar']">
+      <button type="button" class="btn btn-success glyphicon glyphicon-plus"> Cadastrar Novo Prato</button>
+    </a>
+
+    <br>
+    <br>
+
+    <div *ngIf="hasNotPrato()" class="alert alert-warning" role="alert">Não existe pratos para listar!</div>
+    <table *ngIf="hasPrato()" class="width100 tabela-lista">
+      <tr>
+        <th class="width5"></th>
+        <th class="width5"></th>
+        <th class="width40">Restaurante</th>
+        <th class="width40">Prato</th>
+        <th class="width10">Preço</th>
+      </tr>
+      <tr *ngFor="let prato of pratos">
+        <td class="center">
+          <a class="text-danger">
+            <span class="glyphicon glyphicon-minus" (click)="excluir( prato.id )"> </span>
+          </a>
+        </td>
+        <td class="center">
+          <a class="text-primary" [routerLink]="[prato.id, 'editar']">
+            <span class="glyphicon glyphicon-pencil"> </span>
+          </a>
+        </td>
+        <td>{{ prato.restaurante.nome }}</td>
+        <td>{{ prato.nome }}</td>
+        <td>{{ prato.valor | number:'2.2' }}</td>
+      </tr>
+    </table>
+  </section>
+</div>

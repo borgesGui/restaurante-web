@@ -1,0 +1,47 @@
+<div class="body">
+  <h1 class="subtitulo">{{ titulo | uppercase }}</h1>
+
+  <section class="detail width60">
+    <form class="navbar-form">
+      <fieldset class="scheduler-border">
+        <legend class="scheduler-border">Filtros</legend>
+        <div class="form-group">
+          <label>Nome:</label>
+          <br>
+          <input type="text" class="form-control" #filtroInput>
+        </div>
+        <br>
+        <br>
+        <button type="button" class="btn btn-primary glyphicon glyphicon-search" (click)="pesquisar(filtroInput.value)"> Pesquisar</button>
+        <a [routerLink]="['cadastrar']">
+          <button type="button" class="btn btn-success glyphicon glyphicon-plus"> Cadastrar Novo Restaurante</button>
+        </a>
+      </fieldset>
+    </form>
+
+    <br>
+    <br>
+
+    <div *ngIf="hasNotRestaurante()" class="alert alert-warning" role="alert">Não existe restaurantes para listar!</div>
+    <table *ngIf="hasRestaurante()" class="width100 tabela-lista">
+      <tr>
+        <th class="width5"></th>
+        <th class="width5"></th>
+        <th class="width90">Restaurantes</th>
+      </tr>
+      <tr *ngFor="let restaurante of restaurantes">
+        <td class="center">
+          <a class="text-danger">
+            <span class="glyphicon glyphicon-minus" (click)="excluir( restaurante.id )"> </span>
+          </a>
+        </td>
+        <td class="center">
+          <a class="text-primary" [routerLink]="[restaurante.id, 'editar']">
+            <span class="glyphicon glyphicon-pencil"> </span>
+          </a>
+        </td>
+        <td>{{ restaurante.nome }}</td>
+      </tr>
+    </table>
+  </section>
+</div>

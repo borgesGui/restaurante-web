@@ -1,1 +1,117 @@
 /* You can add global styles to this file, and also import other style files */
+.tabela-lista {
+    border: 1px solid black;
+    margin: auto;
+}
+
+.tabela-lista th, td {
+    text-align: left;
+    border-left: 1px solid black;
+}
+
+.tabela-lista tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+
+.tabela-lista th {
+    background-color: lightgrey;
+}
+
+.tabela-lista tr:hover {
+    background-color: #ddd;
+}
+
+.body {
+    align-content: center;
+    width: 100%;
+    margin: auto;
+}
+
+.center {
+    text-align: center;
+}
+
+.subtitulo {
+    margin-left: 5%;
+}
+
+.width5 {
+    width: 5%;
+}
+
+.width10 {
+    width: 10%;
+}
+
+.width20 {
+    width: 20%;
+}
+
+.width30 {
+    width: 30%;
+}
+
+.width40 {
+    width: 40%;
+}
+
+.width50 {
+    width: 50%;
+}
+
+.width60 {
+    width: 60%;
+}
+
+.width70 {
+    width: 70%;
+}
+
+.width80 {
+    width: 80%;
+}
+
+.width90 {
+    width: 90%;
+}
+.width100 {
+    width: 100%;
+}
+
+fieldset.scheduler-border {
+    border: 1px groove #ddd !important;
+    padding: 0 1.4em 1.4em 1.4em !important;
+    margin: 0 0 1.5em 0 !important;
+    -webkit-box-shadow:  0px 0px 0px 0px #000;
+            box-shadow:  0px 0px 0px 0px #000;
+}
+
+legend.scheduler-border {
+    font-size: 1.2em !important;
+    font-weight: bold !important;
+    text-align: left !important;
+
+    width: auto;
+    padding:0 10px; /* To give a bit of padding on the left and right */
+    border-bottom:none;
+}
+
+.detail {
+    margin: auto;
+}
+
+.form-group {
+    width: 100% !important;
+}
+
+.form-group input {
+    width: 50% !important;
+}
+
+.dropdown {
+    width: 100% !important;
+}
+
+.dropdown select {
+    width: 50% !important;
+}
